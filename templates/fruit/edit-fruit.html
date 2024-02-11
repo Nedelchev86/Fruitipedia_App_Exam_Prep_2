@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=\, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/static/styles/styles.css"/>
+    <link rel="stylesheet" href="/styles/styles.css"/>
     <title>Fruitipedia</title>
 </head>
 <body>
@@ -12,10 +12,11 @@
     <header>
         <!-- Navigation -->
         <a id="logo" href="#">
-            <img id="logo-img" src="/static/images/logo.png" alt="logo"/>
+            <img id="logo-img" src="/images/logo.png" alt="logo"/>
         </a>
 
         <nav>
+
             <!-- If there is a user profile -->
             <div class="user">
                 <a href="#">Dashboard</a>
@@ -33,41 +34,46 @@
     </header>
 
     <main>
-        <!-- Add Fruit Form -->
-        <section id="create">
+
+        <!-- Edit Fruit Form -->
+        <section id="edit">
             <div class="form">
-                <h2>Add Fruit</h2>
-                <form class="create-form">
+                <h2>Edit Fruit</h2>
+                <form class="edit-form">
+                    <label for="name">Name:</label>
                     <input
                             type="text"
                             name="name"
                             id="name"
-                            placeholder="Fruit Name"
+                            value="Pineapple"
                     />
+                    <label for="Fruit-image">Image URL:</label>
                     <input
-                            type="text"
+                            type="url"
                             name="imageUrl"
                             id="Fruit-image"
-                            placeholder="Fruit Image URL"
+                            value="https://some-pineapple-fruit-image.jpeg"
                     />
+                    <label for="fruit-description">Description:</label>
                     <textarea
                             id="fruit-description"
                             name="description"
-                            placeholder="Fruit Description"
                             rows="10"
                             cols="50"
-                    ></textarea>
+                    >The pineapple is a tropical plant with an edible fruit. It is the most economically significant plant in the family Bromeliaceae. The pineapple is indigenous to South America. Pineapples grow as a small shrub, the individual flowers of the unpollinated plant fuse to form a multiple fruit. The plant is normally propagated from the offset produced at the top of the fruit, or from a side shoot, and typically matures within a year.</textarea>
+                    <label for="fruit-nutrition">Nutrition:</label>
                     <textarea
                             id="fruit-nutrition"
                             name="nutrition"
-                            placeholder="Nutrition Info"
                             rows="10"
                             cols="50"
-                    ></textarea>
-                    <button type="submit">Add Fruit</button>
+                    >Raw pineapple pulp is 86% water, 13% carbohydrates, 0.5% protein, and contains negligible fat (table). In a 100-gram reference amount, raw pineapple supplies 209 kilojoules (50 kilocalories) of food energy, and is a rich source of manganese (44% Daily Value, DV) and vitamin C (58% DV), but otherwise contains no micronutrients in significant amounts.</textarea>
+
+                    <button type="submit">Edit</button>
                 </form>
             </div>
         </section>
+
     </main>
 </div>
 <!-- footer -->
