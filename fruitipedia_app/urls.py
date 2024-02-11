@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from fruitipedia_app.fruits.views import Homepage
+from fruitipedia_app.fruits.views import Homepage, Dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Homepage.as_view(), name='homepage'),
-    path('profile/', include('fruitipedia_app.profiles.urls'))
+    path('profile/', include('fruitipedia_app.profiles.urls')),
+    path('fruit/', include('fruitipedia_app.fruits.urls')),
+    path('dashboard/', Dashboard.as_view(), name='dashboard'),
 ]

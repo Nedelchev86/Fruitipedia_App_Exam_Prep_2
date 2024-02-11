@@ -21,8 +21,8 @@
             <!-- If there is a user profile -->
             {% if user %}
             <div class="user">
-                <a href="#">Dashboard</a>
-                <a href="#">Add Fruit</a>
+                <a href="{% url 'dashboard' %}">Dashboard</a>
+                <a href="{% url 'add fruit' %}">Add Fruit</a>
                 <a href="{% url 'details profile' %}">Profile</a>
             </div>
             {% else %}

@@ -50,3 +50,6 @@ class EditProfile(views.UpdateView):
 class DeleteProfile(views.DeleteView):
     pass
 
+
+
+
