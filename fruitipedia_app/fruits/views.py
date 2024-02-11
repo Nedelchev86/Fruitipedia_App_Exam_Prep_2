@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as views
 
+from fruitipedia_app.fruits.forms import DeleteFruitForm
 from fruitipedia_app.fruits.models import Fruit
 from fruitipedia_app.profiles.views import get_profile
 
@@ -47,11 +48,23 @@ class AddFruit(views.CreateView):
 
 
 class DetailsFruit(views.DetailView):
-    pass
+    model = Fruit
+    template_name = "fruit/details-fruit.html"
 
 
 class EditFruit(views.UpdateView):
-    pass
+    model = Fruit
+    fields =["name", "image_url", "description", "nutrition"]
+    template_name = "fruit/edit-fruit.html"
+    success_url = reverse_lazy("dashboard")
+
 
 class DeleteFruit(views.DeleteView):
-    pass
+    model = Fruit
+    template_name = "fruit/delete-fruit.html"
+    success_url = reverse_lazy("dashboard")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = DeleteFruitForm(instance=self.object)
+        return context
