@@ -64,7 +64,12 @@ class EditProfile(views.UpdateView):
 
 
 class DeleteProfile(views.DeleteView):
-    pass
+    model = Profile
+    template_name = "profile/delete-profile.html"
+    success_url = reverse_lazy("homepage")
+
+    def get_object(self, queryset=None):
+        return get_profile()
 
 
 
