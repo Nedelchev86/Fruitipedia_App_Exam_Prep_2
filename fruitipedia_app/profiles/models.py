@@ -43,8 +43,8 @@ class Profile(models.Model):
         blank=True,
     )
 
-    age = models.IntegerField(
+    age = models.PositiveIntegerField(
         default= 18,
-        null=True,
+        null=False,
         blank=True,
     )
